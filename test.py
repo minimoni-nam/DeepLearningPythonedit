@@ -36,7 +36,7 @@ training_data = list(training_data)
 
 
 # net = network.Network([784, 20, 10]) nos dice que la imagen es de 28 x 28, 20 son las neuronas ocultas
-# net. SGD es con lo que entrenamos
+# net. SGD es con lo que entrenamos. puse 20 épocas porque con eso solucioné el sobre ajuste que arrojaba con 30
 '''
 net = network.Network([784, 20, 10])
 net.SGD(training_data,
@@ -47,6 +47,7 @@ epochs=20, mini_batch_size=10, eta=3.0, test_data=test_data)
 # - network2.py example:
 #import network2
 
+# lmnda es el parámetro que evita que la red se vuelva "demasiado específica"
 '''
 net = network2.Network([784, 20, 10], cost=network2.CrossEntropyCost)
 #net.large_weight_initializer()
@@ -90,6 +91,7 @@ net.SGD(training_data[:1000], 20, 10, 0.5,
 
 # chapter 4 - The vanishing gradient problem - deep networks are hard to train with simple SGD algorithm
 # this network learns much slower than a shallow one.
+# los números entre corchetes nos muestran más capas, con lo que el problema del gradiente desaparece  
 '''
 net = network2.Network([784, 20, 20, 20, 20, 10], cost=network2.CrossEntropyCost)
 net.SGD(training_data, 20, 10, 0.1,
@@ -138,6 +140,7 @@ net = network.Network([784, 20, 10])
 '''
 
 # chapter 6 -  rectified linear units and some l2 regularization (lmbda=0.1) => even better accuracy
+# ésta parte final crea una red simple, entrena y avalúa
 import network
 import mnist_loader
 
