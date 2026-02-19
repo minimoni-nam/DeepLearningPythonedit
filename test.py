@@ -14,7 +14,8 @@
         Michał Dobrzański, 2016
         dobrzanski.michal.daniel@gmail.com
 """
-#prueba de cambios
+#Entrené en test en lugar de network porque tenía entendido que la segunda solo define la red
+#creo que sí se puede directamente con network, pero por el tiempo de entrega probaré después  
 # ----------------------
 # - read the input data:
 '''
@@ -90,12 +91,15 @@ net.SGD(training_data, 20, 10, 0.1,
 
 
 # ----------------------
-# - network.py example:
+# imortnetwork es para determinar dónde está definida la red, como la arquitectura y el back propagation
 import network
+#import mnist_loader normaliza los datos y separa el entreamiento de la validación y la prueba
 import mnist_loader
  
 
-# read data:
+# load_data_wrapper nos devuelve los tres conjuntos que tenemos a la izquierda:
+# training data es de donde la red aprende
+# validation data  ajusta y test data evalúa
 training_data, validation_data, test_data = mnist_loader.load_data_wrapper()
 # mini-batch size:
 mini_batch_size = 10
