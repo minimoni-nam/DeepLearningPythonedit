@@ -18,6 +18,8 @@
 #creo que sí se puede directamente con network, pero por el tiempo de entrega probaré después  
 # ----------------------
 # - read the input data:
+#import network carga el rchivo donde está definida la red
+#import mnist loader normaliza los datos y separa el entrenamiento de la validación y de la prueba
 '''
 import network
 import mnist_loader
