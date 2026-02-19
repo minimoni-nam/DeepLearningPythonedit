@@ -17,7 +17,7 @@
 #Entrené en test en lugar de network porque tenía entendido que la segunda solo define la red
 #creo que sí se puede directamente con network, pero por el tiempo de entrega probaré después  
 # ----------------------
-# - read the input data:
+
 #import network carga el rchivo donde está definida la red
 #import mnist loader normaliza los datos y separa el entrenamiento de la validación y de la prueba
 '''
@@ -26,10 +26,17 @@ import mnist_loader
 training_data, validation_data, test_data = mnist_loader.load_data_wrapper()
 training_data = list(training_data)
 '''
+# load_data_wrapper devuelve los tres conjuntos que tenemos a ala izquierda:
+# training data es de donde la red aprende, validation data es para ajustar
+#test data sirve para la evaluación final
+# training data = list training data nos da una lista 
 # ---------------------
 # - network.py example:
 #import network
 
+
+# net = network.Network([784, 20, 10]) nos dice que la imagen es de 28 x 28, 20 son las neuronas ocultas
+# net. SGD es con lo que entrenamos
 '''
 net = network.Network([784, 20, 10])
 net.SGD(training_data,
