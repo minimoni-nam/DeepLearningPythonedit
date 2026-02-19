@@ -20,6 +20,7 @@
 
 #import network carga el rchivo donde está definida la red
 #import mnist loader normaliza los datos y separa el entrenamiento de la validación y de la prueba
+# SGD calcula el error y ajusta los pesos 
 '''
 import network
 import mnist_loader
@@ -124,6 +125,8 @@ net.SGD(training_data, 60, mini_batch_size, 0.1, validation_data, test_data)
 '''
 
 # chapter 6 - 5x5 local receptive fields, 20 feature maps, max-pooling layer 2x2
+#Softmax Transforma vectores de números reales en una distribución de probabilidad, garantizando que cada valor esté entre 0 y 1 
+#y que la suma total de las probabilidades sea 1
 '''
 net = Network([
     ConvPoolLayer(image_shape=(mini_batch_size, 1, 28, 28),
